@@ -1,3 +1,6 @@
 venv
 .idea
 __pycache__/
+test.json
+geckodriver.log
+rand.txt
