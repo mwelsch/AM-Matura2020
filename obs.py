@@ -1,6 +1,6 @@
 import time
 from time import sleep
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
@@ -23,7 +23,6 @@ if __name__ == "__main__":
     driver = webdriver.Chrome(options=opp)
 
 
-    #driver.set_page_load_timeout(10)
     driver.execute_cdp_cmd("Network.setUserAgentOverride", {"userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36", "platform": "Windows"})
     try:
         driver.get("https://www.overleaf.com/login")
@@ -34,9 +33,14 @@ if __name__ == "__main__":
     driver.find_element_by_name("email").send_keys(data["email"])
     driver.find_element_by_name("password").send_keys(data["password"])
     driver.find_element_by_name("password").send_keys(Keys.ENTER)
-    #driver.find_element_by_xpath("/html/body/main/div[2]/div/div/div[2]/div[2]/div/div/ul/table/tbody/tr[2]/td[4]/div/button[2]")
-    #driver.find_element_by_xpath("/html/body/main/div[2]/div/div/div[2]/div[2]/div/div/ul/table/tbody/tr[2]/td[4]/div/button[2]").click()
-    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "/html/body/main/div[2]/div/div/div[2]/div[2]/div/div/ul/table/tbody/tr[2]/td[4]/div/button[2]"))).click()
+    #WebDriverWait(driver, 20).until(ec.element_to_be_clickable((By.XPATH, "/html/body/main/div[2]/div/div/div[2]/div[2]/div/div/ul/table/tbody/tr[2]/td[4]/div/button[2]"))).click()
+    # Working: //*[text() = 'Urbaniec_5AHIT_SYT_Data_Science']
+    # //tr/td/div/span/a[text() = 'Urbaniec_5AHIT_SYT_Data_Science']
+    # //tr[td/div/span/a[text() = 'Urbaniec_5AHIT_SYT_Data_Science']]/td/div/button[2]
+    WebDriverWait(driver, 20).until(ec.element_to_be_clickable((By.XPATH, "//tr[td/div/span/a[text() = '" + data["document"] + "']]/td/div/button[2]"))).click()
+
+    #name = driver.find_element_by_xpath("//tr[td/div/span/a[text() = '" + data["document"] + "']]/td/div/button[2]")
+    #print(str(name))
 
     print(str(driver.current_url))
 
