@@ -12,7 +12,7 @@ First clone or download the repository.  Then run following command in the proje
 pyinstaller --onefile obs.py
 ```
 
-It should create a `build` and `dist` directory an a `.spec` file. The created executable is located in the `dist` directory. Add this directory to your system-path.
+It should create a `build` and `dist` directory and a `.spec` file. The created executable is located in the `dist` directory. Add this directory to your system-path.
 
 ## Usage
 
@@ -31,7 +31,7 @@ The `config.json` file stores your Overleaf-credentials and also contains the na
 ```json
 {
   "email": "<your@mail>",
-  "password": "<your@mail>",
+  "password": "<password>",
   "document": "<document_title>",
   "version": 0 // don't change this
 }
@@ -49,21 +49,21 @@ git remote add origin <your_remote_url>
 
 ---
 
-Now you can backup your document with in the same directory with:
+Now you can backup your document  in the same directory with:
 
 ```
 obs do
 ```
 
-This will open a automatic chrome-instance that will do everything for you:
+This will open an automatic chrome-instance that will do everything for you:
 
 * Log in to Overleaf
 * Download the document
 * Unzip it
-* Adding & committing files to git 
+* Adding & committing the files to git 
 * Push changes to the remote-repository
 
-To add a custom commit-message use `obs do "<your message here>"`.
+To add a custom commit-message use `obs do "<your message here>"`.
 
 ## Sources
 * [Fix your Chromedriver](https://stackoverflow.com/a/52108199)
