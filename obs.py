@@ -33,12 +33,13 @@ if __name__ == "__main__":
                         '  "email": "<your@mail>",\n'
                         '  "password": "<password>",\n'
                         '  "document": "<document_title>",\n'
-                        '  "version" : 0.0\n'
+                        '  "version" : 0\n'
                         '}')
             with open("config.json", "w+") as config:
                 config.write(obs_conf)
             with open(".gitignore", "w+") as gitignore:
-                gitignore.write("config.json")
+                gitignore.write("config.json\n")
+                gitignore.write("debug.log\n")
             subprocess.call(["git", "init"])
             if len(sys.argv) >= 3:
                 subprocess.call(["git", "remote", "add", "origin", str(sys.argv[2])])
