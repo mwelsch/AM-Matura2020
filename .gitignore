@@ -1,6 +1,10 @@
 venv
 .idea
 __pycache__/
+__pycache__
 test.json
 geckodriver.log
 rand.txt
+obs.spec
+build
+dist
