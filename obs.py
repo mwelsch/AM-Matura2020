@@ -32,8 +32,7 @@ if __name__ == "__main__":
             obs_conf = ('{\n'
                         '  "email": "<your@mail>",\n'
                         '  "password": "<password>",\n'
-                        '  "document": "<document_title>",\n'
-                        '  "version" : 0\n'
+                        '  "document": "<document_title>"\n'
                         '}')
             with open("config.json", "w+") as config:
                 config.write(obs_conf)
@@ -92,14 +91,10 @@ if __name__ == "__main__":
             backup.close()
             os.remove(data["document"] + ".zip")
             # Create commit message
-            version = int(data["version"])
-            new_version = version + 1
-            data["version"] = new_version
-            with open("config.json", "w") as config:
-                json.dump(data, config, sort_keys=True, indent=4, separators=(',', ': '))
-            msg = "V" + str(version) + " -> V" + str(new_version)
             if len(sys.argv) >= 3:
-                msg += ": " + str(sys.argv[2])
+                msg = str(sys.argv[2])
+            else:
+                msg = "Updated " + data["document"]
             # Add, commit and push
             subprocess.call(["git", "add", "-A"])
             subprocess.call(["git", "commit", "-m", msg])

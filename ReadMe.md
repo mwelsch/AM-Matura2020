@@ -32,8 +32,7 @@ The `config.json` file stores your Overleaf-credentials and also contains the na
 {
   "email": "<your@mail>",
   "password": "<password>",
-  "document": "<document_title>",
-  "version": 0 // don't change this
+  "document": "<document_title>"
 }
 ```
 
