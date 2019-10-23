@@ -36,6 +36,9 @@ The `config.json` file stores your Overleaf-credentials and also contains the na
 
 **Note** - Don't worry, `config.json` will not be stored in your repository later on. It is included in the `.gitignore` file. 
 
+To find your project id, simply open the project you want to backup in your browser and copy it from the URL, it should be located here:
+`https://www.overleaf.com/project/<project_id>`
+
 The next step is to add your remote-repository to git if you haven't done it with the parameter. This is normally accomplished via:
 
 ```
