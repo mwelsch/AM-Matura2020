@@ -3,7 +3,7 @@ window.similarproducts = true</script><style>[ng\:cloak], [ng-cloak], [data-ng-c
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');</script><script type="text/javascript">ga('create', 'UA-112092690-1', 'overleaf.com');
-ga('send', 'pageview');</script><script type="text/javascript">window.csrfToken = "mcbWsdJt-0sYc23w0repBbXJp9HGh6zUXULI";
+ga('send', 'pageview');</script><script type="text/javascript">window.csrfToken = "9CAu9Z43-VRywsfIT9r6YU-urgESwhTYLhtQ";
 //- Configure dynamically loaded assets (via webpack) to be downloaded from CDN
 //- See: https://webpack.js.org/guides/public-path/#on-the-fly
 window.baseAssetPath = "https://cdn.overleaf.com/"
