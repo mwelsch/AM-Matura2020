@@ -1,2 +1,2 @@
 requests==2.22.0
-PyInstaller==3.5
+PyInstaller==3.6
